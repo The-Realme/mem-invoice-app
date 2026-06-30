@@ -9,7 +9,8 @@ const saveQuotation = async (req, res) => {
             quotationNo,
             quotationDate,
             customerName,
-            customerAddress
+            billTo,
+            shipTo
 
         } = req.body;
 
@@ -27,13 +28,29 @@ const saveQuotation = async (req, res) => {
             [
 
                 customerName,
-                customerAddress
+                billTo
 
             ]
 
         );
 
         const customerId = customerResult.rows[0].id;
+
+await pool.query(
+
+    `UPDATE customers
+     SET shipping_address = $1
+     WHERE id = $2`,
+
+    [
+
+        shipTo,
+
+        customerId
+
+    ]
+
+);
 
         // Insert Document
         const documentResult = await pool.query(

@@ -1,16 +1,3 @@
-// const express = require("express");
-
-// const router = express.Router();
-
-// const path = require("path");
-
-// router.get("/", (req,res)=>{
-
-//     res.sendFile(path.join(__dirname,"..","views","quotationForm.html"));
-
-// });
-
-// module.exports = router;
 
 const express = require("express");
 const path = require("path");

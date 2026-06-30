@@ -1,224 +1,220 @@
+/* ================= PAGE ================= */
+
 @page{
-
-size:A4;
-
-margin:0;
-
+    size:A4;
+    margin:0;
 }
 
 *{
-
-margin:0;
-
-padding:0;
-
-box-sizing:border-box;
-
-font-family:Arial,sans-serif;
-
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-
-background:#efefef;
-
+    background:#ececec;
 }
-
-/* .page{
-
-width:210mm;
-
-height:297mm;
-
-background:white;
-
-margin:auto;
-
-overflow:hidden;
-
-} */
-
-/* .page{
-
-position:relative;
-
-width:210mm;
-
-height:297mm;
-
-background:white;
-
-margin:auto;
-
-overflow:hidden;
-
-} */
 
 .page{
 
-position:relative;
+    position:relative;
 
-width:210mm;
+    width:210mm;
+    min-height:297mm;
 
-min-height:297mm;
+    margin:auto;
 
-background:white;
+    background:white;
 
-margin:auto;
+    overflow:hidden;
+}
 
-overflow:hidden;
+/* ================= WATERMARK ================= */
 
-padding-bottom:20mm;
+.watermark{
+
+    position:absolute;
+
+    top:48%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:320px;
+
+    opacity:.06;
+
+    z-index:0;
 
 }
 
-/* .header{
+/* ================= HEADER ================= */
 
-width:100%;
+.header{
 
-display:block;
+    width:100%;
 
-} */
+    display:block;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+/* ================= TITLE ================= */
 
 .title{
 
-text-align:center;
+    text-align:center;
 
-margin:-22px 0 10px;
+    color:#007c86;
 
-font-size:22px;
+    font-size:20px;
 
-color:#007c86;
+    letter-spacing:1px;
 
-text-decoration:underline;
+    margin:6px 0 8px;
 
-}
+    text-decoration:underline;
 
-/* .top-row{
+    position:relative;
 
-display:flex;
-
-justify-content:space-between;
-
-padding:0 40px;
-
-} */
-
-.top-row{
-
-display:flex;
-
-justify-content:space-between;
-
-padding:0 30px;
-
-margin-bottom:6px;
+    z-index:5;
 
 }
 
-.info-table{
+/* ================= DOCUMENT ================= */
 
-width:380px;
+.document-table{
 
-border-collapse:collapse;
+    width:94%;
 
-}
+    margin:auto;
 
-/* .info-table td{
+    border-collapse:collapse;
 
-border:1px solid #555;
+    margin-bottom:8px;
 
-padding:8px;
+    position:relative;
 
-font-size:15px;
-
-} */
-
-.info-table{
-
-width:340px;
-
-border-collapse:collapse;
+    z-index:5;
 
 }
 
-.info-table td{
+.document-table td{
 
-border:1px solid #555;
-
-padding:5px 8px;
-
-font-size:13px;
+    vertical-align:top;
 
 }
 
-/* .customer-row{
+.quotation-box{
 
-display:flex;
-
-padding:10px 40px;
-
-gap:15px;
-
-} */
-
-.customer-row{
-
-display:flex;
-
-padding:6px 30px;
-
-gap:10px;
-
-margin-bottom:8px;
+    width:32%;
 
 }
 
-.customer-box{
+.empty-column{
 
-flex:1;
+    width:36%;
 
-border:1px solid #555;
+}
 
-min-height:95px;
+.details-box{
+
+    width:32%;
+
+}
+
+.quotation-box table,
+.details-box table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.quotation-box td,
+.details-box td{
+
+    border:1px solid #555;
+
+    padding:5px 8px;
+
+    font-size:13px;
+
+}
+
+/* ================= CUSTOMER ================= */
+
+.customer-table{
+
+    width:94%;
+
+    margin:auto;
+
+    border-collapse:collapse;
+
+    margin-bottom:8px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.customer-table td{
+
+    width:50%;
+
+    border:1px solid #555;
+
+    vertical-align:top;
 
 }
 
 .box-heading{
 
-background:#007c86;
+    background:#007c86;
 
-color:white;
+    color:white;
 
-padding:5px 8px;
+    font-weight:bold;
 
-font-size:14px;
+    padding:5px 8px;
 
-font-weight:bold;
+    font-size:14px;
 
 }
 
 .box-content{
 
-padding:6px 8px;
+    padding:8px;
 
-line-height:1.4;
+    line-height:1.45;
 
-font-size:13px;
+    font-size:13px;
 
 }
 
-/* ================= ITEMS TABLE ================= */
+/* ================= ITEMS ================= */
 
 .items-table{
 
-    width:calc(100% - 80px);
+    width:94%;
 
-    margin:15px 40px;
+    margin:auto;
 
     border-collapse:collapse;
 
-    font-size:14px;
+    margin-bottom:8px;
+
+    position:relative;
+
+    z-index:5;
 
 }
 
@@ -228,18 +224,21 @@ font-size:13px;
 
     color:white;
 
-    padding:10px;
-    font-size:15px;
+    border:1px solid #444;
 
-    border:1px solid black;
+    padding:6px;
+
+    font-size:13px;
 
 }
 
 .items-table td{
 
-    border:1px solid black;
+    border:1px solid #444;
 
-    padding:10px;
+    padding:5px;
+
+    font-size:13px;
 
     text-align:center;
 
@@ -251,205 +250,135 @@ font-size:13px;
 
 }
 
+/* ================= SUMMARY ================= */
 
-/* ================= BOTTOM ================= */
+.summary-table{
 
-.bottom-row{
+    width:94%;
 
-    display:flex;
+    margin:auto;
 
-    margin:10px 40px;
+    border-collapse:collapse;
 
-    gap:15px;
-
-}
-
-.bank-box{
-
-    width:33%;
-
-    border:1px solid black;
-
-}
-
-.terms-box{
-
-    width:34%;
-
-    border:1px solid black;
-
-}
-
-.signature-box{
-
-    width:33%;
-
-    text-align:center;
-
-    border-left:1px solid black;
-
-}
-
-.footer{
-
-    width:100%;
-
-    display:block;
-
-    margin-top:10px;
-
-}
-
-
-/* ================= WATERMARK ================= */
-
-.watermark{
-
-    position:absolute;
-
-    top:50%;
-
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:612px;
-
-    opacity:1.0;
-
-    z-index:0;
-
-    pointer-events:none;
-
-}
-
-.header,
-.title,
-.top-row,
-.customer-row,
-.items-table,
-.summary-row,
-.bottom-row,
-.footer{
+    margin-bottom:8px;
 
     position:relative;
+
     z-index:5;
 
 }
-
-
-.header{
-
-display:block;
-
-width:100%;
-
-/* Let the image keep its natural aspect ratio */
-height:auto;
-
-max-height:155px;
-
-object-fit:contain;
-
-margin: top -15px;;
-
-}
-
-.footer{
-
-    display:block;
-    width:100%;
-    height:85px;
-    object-fit:cover;
-    position:relative;
-    z-index:5;
-
-}
-
-
-
-.title{
-
-text-align:center;
-
-font-size:24px;
-
-font-weight:bold;
-
-letter-spacing:1px;
-
-color:#007c86;
-
-text-decoration:underline;
-
-margin:-24px 0 10px;
-
-}
-
-
-.totals-table{
-
-width:320px;
-
-border-collapse:collapse;
-
-margin-left:auto;
-
-}
-
-.totals-table td,
-.totals-table th{
-
-border:1px solid #444;
-
-padding:8px;
-
-}
-
-.totals-table th{
-
-background:#007c86;
-
-color:white;
-
-}
-
 
 .amount-box{
 
-border:1px solid #444;
+    width:66%;
 
-padding:10px;
+    border:1px solid #555;
 
-font-size:15px;
-
-line-height:1.8;
-
-min-height:90px;
+    vertical-align:top;
 
 }
 
+.totals-box{
 
-.terms-box .box-content{
+    width:34%;
 
-font-size:13px;
-
-line-height:1.8;
-
-padding:10px;
-
-text-align:justify;
+    vertical-align:top;
 
 }
 
-.company-tagline{
+.totals-box table{
 
-text-align:center;
+    width:100%;
 
-font-size:13px;
+    border-collapse:collapse;
 
-color:#666;
+}
 
-margin-bottom:7px;
+.totals-box td,
+.totals-box th{
+
+    border:1px solid #555;
+
+    padding:5px 8px;
+
+    font-size:13px;
+
+}
+
+.grand-total{
+
+    background:#007c86;
+
+    color:white;
+
+}
+
+/* ================= FOOTER INFO ================= */
+
+.footer-table{
+
+    width:94%;
+
+    margin:auto;
+
+    border-collapse:collapse;
+
+    margin-bottom:4px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.footer-table td{
+
+    border:1px solid #555;
+
+    vertical-align:top;
+
+}
+
+.bank{
+
+    width:32%;
+
+}
+
+.terms{
+
+    width:36%;
+
+}
+
+.signature{
+
+    width:32%;
+
+    text-align:center;
+
+}
+
+.signature-image{
+
+    width:130px;
+
+    margin-top:20px;
+
+    margin-bottom:8px;
+
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    width:100%;
+
+    display:block;
+
+    position:relative;
+
+    z-index:5;
 
 }

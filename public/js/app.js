@@ -70,11 +70,13 @@ function calculateRow(event){
 
 const quotationForm = document.getElementById("quotationForm");
 
-quotationForm.addEventListener("submit", function (event) {
+quotationForm.addEventListener("submit", async function(event){
+
+    event.preventDefault();
 
     const items = [];
 
-    document.querySelectorAll("#itemsTable tbody tr").forEach(row => {
+    document.querySelectorAll("#itemsTable tbody tr").forEach(row=>{
 
         items.push({
 
@@ -84,13 +86,45 @@ quotationForm.addEventListener("submit", function (event) {
 
             rate: row.querySelector(".rate").value,
 
-            amount: row.querySelector(".amount").textContent.replace("₹", "")
+            amount: row.querySelector(".amount").textContent.replace("₹","")
 
         });
 
     });
 
-    document.getElementById("itemsData").value =
-        JSON.stringify(items);
+    document.getElementById("itemsData").value = JSON.stringify(items);
+
+    const formData = new URLSearchParams(
+    new FormData(quotationForm)
+);
+
+const response = await fetch("/quotation", {
+
+    method: "POST",
+
+    headers: {
+
+        "Content-Type": "application/x-www-form-urlencoded"
+
+    },
+
+    body: formData
+
+});
+
+    const result = await response.json();
+
+    if(result.success){
+
+        window.location.href =
+        `/pdf/quotation/${result.documentId}`;
+
+    }
+
+    else{
+
+        alert(result.message);
+
+    }
 
 });

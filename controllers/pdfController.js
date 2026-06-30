@@ -91,12 +91,12 @@ const generateQuotationPDF = async (req, res) => {
         const grandTotal = subtotal + gstAmount + freight;
 
 
-const toWords = new ToWords({
-    localeCode: "en-IN"
-});
+        const toWords = new ToWords({
+            localeCode: "en-IN"
+        });
 
-const amountInWords =
-    toWords.convert(grandTotal) + " Rupees Only";
+        const amountInWords =
+            toWords.convert(grandTotal) + " Rupees Only";
 
 
 
@@ -319,11 +319,10 @@ const amountInWords =
 
                 // Customer
 
-                billTo: customer.billing_address,
+                billTo: customer.billing_address.replace(/\n/g, "<br>"),
 
-                shipTo:
-                    customer.shipping_address ||
-                    customer.billing_address,
+                shipTo: (customer.shipping_address || customer.billing_address)
+                    .replace(/\n/g, "<br>"),
 
                 // Table
 

@@ -13,108 +13,122 @@
 
 <body>
 
-    <div class="page">
+<div class="page">
 
+    <!-- ================= WATERMARK ================= -->
 
+    <img
+        src="/assets/watermark.jpg"
+        class="watermark">
 
-        <!-- ================= WATERMARK ================= -->
+    <!-- ================= HEADER ================= -->
 
-        <img class="watermark" src="/assets/watermark.jpg">
-        <!-- Header -->
+    <img
+        src="/assets/header.jpg"
+        class="header">
 
-        <img class="header" src="/assets/header.jpg">
+    <!-- ================= TITLE ================= -->
 
-        <!-- Title -->
+    <h1 class="title">
 
-        <h1 class="title">
+        QUOTATION
 
-            QUOTATION
+    </h1>
 
-        </h1>
+    <!-- ================= DOCUMENT DETAILS ================= -->
 
-        <p class="company-tagline">
+    <table class="document-table">
 
-            Heavy Earth Moving Machinery Parts & Components
+        <tr>
 
-        </p>
+            <td class="quotation-box">
 
-        <!-- Quote Information -->
+                <table>
 
-        <div class="top-row">
+                    <tr>
 
-            <table class="info-table">
+                        <td><strong>Quotation No.</strong></td>
 
-                <tr>
+                        <td>{{quotationNo}}</td>
 
-                    <td><strong>Quotation No.</strong></td>
+                    </tr>
 
-                    <td>{{quotationNo}}</td>
+                    <tr>
 
-                </tr>
+                        <td><strong>Date</strong></td>
 
-                <tr>
+                        <td>{{quotationDate}}</td>
 
-                    <td><strong>Date</strong></td>
+                    </tr>
 
-                    <td>{{quotationDate}}</td>
+                </table>
 
-                </tr>
+            </td>
 
-            </table>
+            <td class="empty-column">
 
-            <table class="info-table">
+            </td>
 
-                <tr>
+            <td class="details-box">
 
-                    <td><strong>Valid Upto</strong></td>
+                <table>
 
-                    <td>{{validUpto}}</td>
+                    <tr>
 
-                </tr>
+                        <td><strong>Valid Upto</strong></td>
 
-                <tr>
+                        <td>{{validUpto}}</td>
 
-                    <td><strong>Payment Terms</strong></td>
+                    </tr>
 
-                    <td>{{paymentTerms}}</td>
+                    <tr>
 
-                </tr>
+                        <td><strong>Payment Terms</strong></td>
 
-                <tr>
+                        <td>{{paymentTerms}}</td>
 
-                    <td><strong>Delivery</strong></td>
+                    </tr>
 
-                    <td>{{delivery}}</td>
+                    <tr>
 
-                </tr>
+                        <td><strong>Delivery</strong></td>
 
-                <tr>
+                        <td>{{delivery}}</td>
 
-                    <td><strong>Currency</strong></td>
+                    </tr>
 
-                    <td>{{currency}}</td>
+                    <tr>
 
-                </tr>
+                        <td><strong>Currency</strong></td>
 
-            </table>
+                        <td>{{currency}}</td>
 
-        </div>
+                    </tr>
 
-        <!-- Customer -->
+                </table>
 
-        <div class="customer-row">
+            </td>
 
-            <div class="customer-box">
+        </tr>
+
+    </table>
+
+    <!-- ================= CUSTOMER ================= -->
+
+    <table class="customer-table">
+
+        <tr>
+
+            <td>
 
                 <div class="box-heading">
 
-                    BILL TO
+                    BILL TO (RECEIVER)
 
                 </div>
 
                 <div class="box-content">
 
-                    <!-- {{billTo}} -->
                     <strong>{{customerName}}</strong>
 
                     <br><br>
@@ -123,64 +137,73 @@
 
                 </div>
 
-            </div>
+            </td>
 
-            <div class="customer-box">
+            <td>
 
                 <div class="box-heading">
 
-                    SHIP TO
+                    SHIP TO (CONSIGNEE)
 
                 </div>
 
                 <div class="box-content">
 
+                    <strong>{{customerName}}</strong>
+
+                    <br><br>
+
                     {{shipTo}}
 
                 </div>
 
-            </div>
+            </td>
 
-        </div>
-        <!-- ================= ITEMS TABLE ================= -->
+        </tr>
 
-        <table class="items-table">
+    </table>
 
-            <thead>
+    <!-- ================= ITEMS ================= -->
 
-                <tr>
+    <table class="items-table">
 
-                    <th>SL.NO</th>
+        <thead>
 
-                    <th>DESCRIPTION</th>
+            <tr>
 
-                    <th>HSN / SAC</th>
+                <th>SL.NO</th>
 
-                    <th>QTY</th>
+                <th>DESCRIPTION</th>
 
-                    <th>UOM</th>
+                <th>HSN/SAC</th>
 
-                    <th>RATE (₹)</th>
+                <th>QTY</th>
 
-                    <th>AMOUNT (₹)</th>
+                <th>UOM</th>
 
-                </tr>
+                <th>RATE (₹)</th>
 
-            </thead>
+                <th>AMOUNT (₹)</th>
 
-            <tbody>
+            </tr>
 
-                {{itemRows}}
+        </thead>
 
-            </tbody>
+        <tbody>
 
-        </table>
+            {{itemRows}}
 
-        <!-- ================= SUMMARY ================= -->
+        </tbody>
 
-        <div class="summary-row">
+    </table>
 
-            <div class="amount-box">
+    <!-- ================= SUMMARY ================= -->
+
+    <table class="summary-table">
+
+        <tr>
+
+            <td class="amount-box">
 
                 <div class="box-heading">
 
@@ -194,61 +217,67 @@
 
                 </div>
 
-            </div>
+            </td>
 
-            <table class="totals-table">
+            <td class="totals-box">
 
-                <tr>
+                <table>
 
-                    <td>Sub Total</td>
+                    <tr>
 
-                    <td>₹{{subtotal}}</td>
+                        <td>Sub Total</td>
 
-                </tr>
+                        <td>₹{{subtotal}}</td>
 
-                <tr>
+                    </tr>
 
-                    <td>CGST</td>
+                    <tr>
 
-                    <td>₹{{cgst}}</td>
+                        <td>CGST @ 9%</td>
 
-                </tr>
+                        <td>₹{{cgst}}</td>
 
-                <tr>
+                    </tr>
 
-                    <td>SGST</td>
+                    <tr>
 
-                    <td>₹{{sgst}}</td>
+                        <td>SGST @ 9%</td>
 
-                </tr>
+                        <td>₹{{sgst}}</td>
 
-                <tr>
+                    </tr>
 
-                    <td>Freight</td>
+                    <tr>
 
-                    <td>₹{{freight}}</td>
+                        <td>Freight</td>
 
-                </tr>
+                        <td>₹{{freight}}</td>
 
-                <tr>
+                    </tr>
 
-                    <th>GRAND TOTAL</th>
+                    <tr class="grand-total">
 
-                    <th>₹{{grandTotal}}</th>
+                        <th>GRAND TOTAL</th>
 
-                </tr>
+                        <th>₹{{grandTotal}}</th>
 
-            </table>
+                    </tr>
 
-        </div>
+                </table>
 
+            </td>
 
-        <!-- Footer will come later -->
-        <!-- ================= FOOTER SECTION ================= -->
+        </tr>
 
-        <div class="bottom-row">
+    </table>
 
-            <div class="bank-box">
+    <!-- ================= FOOTER INFO ================= -->
+
+    <table class="footer-table">
+
+        <tr>
+
+            <td class="bank">
 
                 <div class="box-heading">
 
@@ -258,34 +287,21 @@
 
                 <div class="box-content">
 
-                    <strong>Bank</strong> :
-                    {{bankName}}
+                    <strong>Bank :</strong> {{bankName}}<br>
 
-                    <br>
+                    <strong>A/c Name :</strong> {{companyName}}<br>
 
-                    <strong>A/c Name</strong> :
-                    {{companyName}}
+                    <strong>A/c No :</strong> {{accountNumber}}<br>
 
-                    <br>
+                    <strong>IFSC :</strong> {{ifsc}}<br>
 
-                    <strong>A/c No.</strong> :
-                    {{accountNumber}}
-
-                    <br>
-
-                    <strong>IFSC</strong> :
-                    {{ifsc}}
-
-                    <br>
-
-                    <strong>Branch</strong> :
-                    {{branch}}
+                    <strong>Branch :</strong> {{branch}}
 
                 </div>
 
-            </div>
+            </td>
 
-            <div class="terms-box">
+            <td class="terms">
 
                 <div class="box-heading">
 
@@ -299,9 +315,9 @@
 
                 </div>
 
-            </div>
+            </td>
 
-            <div class="signature-box">
+            <td class="signature">
 
                 <h3>
 
@@ -309,24 +325,29 @@
 
                 </h3>
 
-                <br><br>
+                <img
+                    src="/assets/signature.jpeg"
+                    class="signature-image">
 
-                <img src="/assets/signature.jpeg" height="70">
-
-                <br>
-
-                <strong>
+                <p>
 
                     Authorized Signatory
 
-                </strong>
+                </p>
 
-            </div>
+            </td>
 
-        </div>
+        </tr>
 
-        <img class="footer" src="/assets/footer.jpg">
-    </div>
+    </table>
+
+    <!-- ================= FOOTER ================= -->
+
+    <img
+        src="/assets/footer.jpg"
+        class="footer">
+
+</div>
 
 </body>
 
