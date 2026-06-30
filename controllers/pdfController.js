@@ -72,13 +72,6 @@ const generateQuotationPDF = async (req, res) => {
 
         );
 
-        // const cgst = subtotal * 0.09;
-
-        // const sgst = subtotal * 0.09;
-
-        // const freight = 0;
-
-        // const grandTotal = subtotal + cgst + sgst + freight;
 
         const gstAmount = subtotal * GST_RATE / 100;
 
@@ -110,28 +103,6 @@ const generateQuotationPDF = async (req, res) => {
         let itemRows = "";
 
         items.forEach((item, index) => {
-
-            // itemRows += `
-
-            // <tr>
-
-            // <td>${index+1}</td>
-
-            // <td>${item.description}</td>
-
-            // <td>${item.hsn_code ?? "-"}</td>
-
-            // <td>${item.quantity}</td>
-
-            // <td>${item.unit_price}</td>
-
-            // <td>${item.gst_percentage ?? 18}%</td>
-
-            // <td>${item.amount}</td>
-
-            // </tr>
-
-            // `;
 
             itemRows += `
 
@@ -220,7 +191,7 @@ const generateQuotationPDF = async (req, res) => {
         ).toString("base64");
 
         const signatureImage = fs.readFileSync(
-            path.join(__dirname, "..", "public", "assets", "signature.jpeg")
+            path.join(__dirname, "..", "public", "assets", "signaturenew.png")
         ).toString("base64");
 
 
@@ -249,36 +220,9 @@ const generateQuotationPDF = async (req, res) => {
             )
 
             .replace(
-                '/assets/signature.jpeg',
+                '/assets/signaturenew.png',
                 `data:image/jpeg;base64,${signatureImage}`
             );
-
-
-
-        // const assetsPath = path.join(
-        //     __dirname,
-        //     "..",
-        //     "public",
-        //     "assets"
-        // ).replace(/\\/g, "/");
-
-        // template = template
-        // .replace(
-        //     '/assets/header.jpg',
-        //     `file:///${assetsPath}/header.jpg`
-        // )
-        // .replace(
-        //     '/assets/footer.jpg',
-        //     `file:///${assetsPath}/footer.jpg`
-        // )
-        // .replace(
-        //     '/assets/watermark.jpg',
-        //     `file:///${assetsPath}/watermark.jpg`
-        // )
-        // .replace(
-        //     '/assets/signature.jpeg',
-        //     `file:///${assetsPath}/signature.jpeg`
-        // );
 
 
         const html = renderTemplate(
@@ -328,18 +272,6 @@ const generateQuotationPDF = async (req, res) => {
 
                 itemRows: itemRows,
 
-                // Totals
-
-                // subtotal: document.subtotal || 0,
-
-                // cgst: document.cgst || 0,
-
-                // sgst: document.sgst || 0,
-
-                // freight: document.freight || 0,
-
-                // grandTotal: document.grand_total || 0,
-
                 subtotal: subtotal.toFixed(2),
 
                 cgst: cgst.toFixed(2),
@@ -356,22 +288,12 @@ const generateQuotationPDF = async (req, res) => {
             }
 
         );
-        // console.log("========== HTML START ==========");
-        // console.log(html.substring(0, 1000));
-        // console.log("========== HTML END ==========");
-        // ===========================
-        // Save PDF
-        // ===========================
 
         await page.setContent(html, {
 
             waitUntil: "networkidle0"
 
         });
-
-        // await page.goto("http://localhost:3000/preview", {
-        //     waitUntil: "networkidle0"
-        // });
 
         const pdfPath = path.join(
 

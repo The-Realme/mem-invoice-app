@@ -120,13 +120,6 @@ await pool.query(
 
         }
 
-        // res.json({
-
-        //     success: true,
-
-        //     message: "Quotation Saved Successfully!"
-
-        // });
 
         res.json({
 
