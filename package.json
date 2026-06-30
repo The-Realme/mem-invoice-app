@@ -1,0 +1,20 @@
+{
+  "name": "invoice_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "pg": "^8.22.0",
+    "puppeteer": "^25.2.1",
+    "to-words": "^5.6.1"
+  }
+}

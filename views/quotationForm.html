@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Quotation</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Create Quotation</h1>
+
+    <form
+        id="quotationForm"
+        action="/quotation"
+        method="POST">
+
+        <!-- ================= Document Details ================= -->
+
+        <h2>Document Details</h2>
+
+        <label for="quotationNo">Quotation Number</label><br>
+
+        <input
+            type="text"
+            id="quotationNo"
+            name="quotationNo"
+            required>
+
+        <br><br>
+
+        <label for="quotationDate">Quotation Date</label><br>
+
+        <input
+            type="date"
+            id="quotationDate"
+            name="quotationDate"
+            required>
+
+        <br><br>
+
+        <!-- ================= Customer Details ================= -->
+
+        <h2>Customer Details</h2>
+
+        <label for="customerName">Customer Name</label><br>
+
+        <input
+            type="text"
+            id="customerName"
+            name="customerName"
+            required>
+
+        <br><br>
+
+        <label for="customerAddress">Customer Address</label><br>
+
+        <textarea
+            id="customerAddress"
+            name="customerAddress"
+            rows="4"
+            required></textarea>
+
+        <br><br>
+
+        <!-- ================= Item Table ================= -->
+
+        <h2>Items</h2>
+
+        <table id="itemsTable" border="1">
+
+            <thead>
+
+                <tr>
+
+                    <th>Description</th>
+                    <th>Qty</th>
+                    <th>Rate</th>
+                    <th>Amount</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+        <br>
+
+        <button
+            type="button"
+            id="addItem">
+
+            + Add Item
+
+        </button>
+
+        <br><br>
+
+        <h3>
+
+            Grand Total :
+            ₹<span id="grandTotal">0</span>
+
+        </h3>
+
+        <br>
+
+        <input
+    type="hidden"
+    id="itemsData"
+    name="itemsData">
+
+        <button type="submit">
+
+            Generate Quotation
+
+        </button>
+
+    </form>
+
+</div>
+
+<script src="/js/app.js"></script>
+
+</body>
+
+</html>

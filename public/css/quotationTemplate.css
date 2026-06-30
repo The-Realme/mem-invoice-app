@@ -1,0 +1,455 @@
+@page{
+
+size:A4;
+
+margin:0;
+
+}
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Arial,sans-serif;
+
+}
+
+body{
+
+background:#efefef;
+
+}
+
+/* .page{
+
+width:210mm;
+
+height:297mm;
+
+background:white;
+
+margin:auto;
+
+overflow:hidden;
+
+} */
+
+/* .page{
+
+position:relative;
+
+width:210mm;
+
+height:297mm;
+
+background:white;
+
+margin:auto;
+
+overflow:hidden;
+
+} */
+
+.page{
+
+position:relative;
+
+width:210mm;
+
+min-height:297mm;
+
+background:white;
+
+margin:auto;
+
+overflow:hidden;
+
+padding-bottom:20mm;
+
+}
+
+/* .header{
+
+width:100%;
+
+display:block;
+
+} */
+
+.title{
+
+text-align:center;
+
+margin:-22px 0 10px;
+
+font-size:22px;
+
+color:#007c86;
+
+text-decoration:underline;
+
+}
+
+/* .top-row{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:0 40px;
+
+} */
+
+.top-row{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:0 30px;
+
+margin-bottom:6px;
+
+}
+
+.info-table{
+
+width:380px;
+
+border-collapse:collapse;
+
+}
+
+/* .info-table td{
+
+border:1px solid #555;
+
+padding:8px;
+
+font-size:15px;
+
+} */
+
+.info-table{
+
+width:340px;
+
+border-collapse:collapse;
+
+}
+
+.info-table td{
+
+border:1px solid #555;
+
+padding:5px 8px;
+
+font-size:13px;
+
+}
+
+/* .customer-row{
+
+display:flex;
+
+padding:10px 40px;
+
+gap:15px;
+
+} */
+
+.customer-row{
+
+display:flex;
+
+padding:6px 30px;
+
+gap:10px;
+
+margin-bottom:8px;
+
+}
+
+.customer-box{
+
+flex:1;
+
+border:1px solid #555;
+
+min-height:95px;
+
+}
+
+.box-heading{
+
+background:#007c86;
+
+color:white;
+
+padding:5px 8px;
+
+font-size:14px;
+
+font-weight:bold;
+
+}
+
+.box-content{
+
+padding:6px 8px;
+
+line-height:1.4;
+
+font-size:13px;
+
+}
+
+/* ================= ITEMS TABLE ================= */
+
+.items-table{
+
+    width:calc(100% - 80px);
+
+    margin:15px 40px;
+
+    border-collapse:collapse;
+
+    font-size:14px;
+
+}
+
+.items-table th{
+
+    background:#007c86;
+
+    color:white;
+
+    padding:10px;
+    font-size:15px;
+
+    border:1px solid black;
+
+}
+
+.items-table td{
+
+    border:1px solid black;
+
+    padding:10px;
+
+    text-align:center;
+
+}
+
+.items-table td:nth-child(2){
+
+    text-align:left;
+
+}
+
+
+/* ================= BOTTOM ================= */
+
+.bottom-row{
+
+    display:flex;
+
+    margin:10px 40px;
+
+    gap:15px;
+
+}
+
+.bank-box{
+
+    width:33%;
+
+    border:1px solid black;
+
+}
+
+.terms-box{
+
+    width:34%;
+
+    border:1px solid black;
+
+}
+
+.signature-box{
+
+    width:33%;
+
+    text-align:center;
+
+    border-left:1px solid black;
+
+}
+
+.footer{
+
+    width:100%;
+
+    display:block;
+
+    margin-top:10px;
+
+}
+
+
+/* ================= WATERMARK ================= */
+
+.watermark{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:612px;
+
+    opacity:1.0;
+
+    z-index:0;
+
+    pointer-events:none;
+
+}
+
+.header,
+.title,
+.top-row,
+.customer-row,
+.items-table,
+.summary-row,
+.bottom-row,
+.footer{
+
+    position:relative;
+    z-index:5;
+
+}
+
+
+.header{
+
+display:block;
+
+width:100%;
+
+/* Let the image keep its natural aspect ratio */
+height:auto;
+
+max-height:155px;
+
+object-fit:contain;
+
+margin: top -15px;;
+
+}
+
+.footer{
+
+    display:block;
+    width:100%;
+    height:85px;
+    object-fit:cover;
+    position:relative;
+    z-index:5;
+
+}
+
+
+
+.title{
+
+text-align:center;
+
+font-size:24px;
+
+font-weight:bold;
+
+letter-spacing:1px;
+
+color:#007c86;
+
+text-decoration:underline;
+
+margin:-24px 0 10px;
+
+}
+
+
+.totals-table{
+
+width:320px;
+
+border-collapse:collapse;
+
+margin-left:auto;
+
+}
+
+.totals-table td,
+.totals-table th{
+
+border:1px solid #444;
+
+padding:8px;
+
+}
+
+.totals-table th{
+
+background:#007c86;
+
+color:white;
+
+}
+
+
+.amount-box{
+
+border:1px solid #444;
+
+padding:10px;
+
+font-size:15px;
+
+line-height:1.8;
+
+min-height:90px;
+
+}
+
+
+.terms-box .box-content{
+
+font-size:13px;
+
+line-height:1.8;
+
+padding:10px;
+
+text-align:justify;
+
+}
+
+.company-tagline{
+
+text-align:center;
+
+font-size:13px;
+
+color:#666;
+
+margin-bottom:7px;
+
+}

@@ -1,0 +1,70 @@
+body{
+
+    margin:0;
+
+    background:#ddd;
+
+    font-family:Arial;
+
+}
+
+.page{
+
+    width:210mm;
+
+    min-height:297mm;
+
+    background:white;
+
+    margin:20px auto;
+
+    padding:20mm;
+
+    box-sizing:border-box;
+
+}
+
+.document-title{
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    margin-bottom:30px;
+
+}
+
+.document-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:25px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+table th,
+table td{
+
+    border:1px solid black;
+
+    padding:8px;
+
+}
+
+h2{
+
+    text-align:right;
+
+}

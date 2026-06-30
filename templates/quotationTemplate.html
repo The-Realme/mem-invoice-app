@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Quotation</title>
+
+    <link rel="stylesheet" href="/css/quotationTemplate.css">
+
+</head>
+
+<body>
+
+    <div class="page">
+
+
+
+        <!-- ================= WATERMARK ================= -->
+
+        <img class="watermark" src="/assets/watermark.jpg">
+        <!-- Header -->
+
+        <img class="header" src="/assets/header.jpg">
+
+        <!-- Title -->
+
+        <h1 class="title">
+
+            QUOTATION
+
+        </h1>
+
+        <p class="company-tagline">
+
+            Heavy Earth Moving Machinery Parts & Components
+
+        </p>
+
+        <!-- Quote Information -->
+
+        <div class="top-row">
+
+            <table class="info-table">
+
+                <tr>
+
+                    <td><strong>Quotation No.</strong></td>
+
+                    <td>{{quotationNo}}</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>Date</strong></td>
+
+                    <td>{{quotationDate}}</td>
+
+                </tr>
+
+            </table>
+
+            <table class="info-table">
+
+                <tr>
+
+                    <td><strong>Valid Upto</strong></td>
+
+                    <td>{{validUpto}}</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>Payment Terms</strong></td>
+
+                    <td>{{paymentTerms}}</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>Delivery</strong></td>
+
+                    <td>{{delivery}}</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>Currency</strong></td>
+
+                    <td>{{currency}}</td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <!-- Customer -->
+
+        <div class="customer-row">
+
+            <div class="customer-box">
+
+                <div class="box-heading">
+
+                    BILL TO
+
+                </div>
+
+                <div class="box-content">
+
+                    <!-- {{billTo}} -->
+                    <strong>{{customerName}}</strong>
+
+                    <br><br>
+
+                    {{billTo}}
+
+                </div>
+
+            </div>
+
+            <div class="customer-box">
+
+                <div class="box-heading">
+
+                    SHIP TO
+
+                </div>
+
+                <div class="box-content">
+
+                    {{shipTo}}
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- ================= ITEMS TABLE ================= -->
+
+        <table class="items-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>SL.NO</th>
+
+                    <th>DESCRIPTION</th>
+
+                    <th>HSN / SAC</th>
+
+                    <th>QTY</th>
+
+                    <th>UOM</th>
+
+                    <th>RATE (₹)</th>
+
+                    <th>AMOUNT (₹)</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {{itemRows}}
+
+            </tbody>
+
+        </table>
+
+        <!-- ================= SUMMARY ================= -->
+
+        <div class="summary-row">
+
+            <div class="amount-box">
+
+                <div class="box-heading">
+
+                    Amount in Words
+
+                </div>
+
+                <div class="box-content">
+
+                    {{amountInWords}}
+
+                </div>
+
+            </div>
+
+            <table class="totals-table">
+
+                <tr>
+
+                    <td>Sub Total</td>
+
+                    <td>₹{{subtotal}}</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>CGST</td>
+
+                    <td>₹{{cgst}}</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>SGST</td>
+
+                    <td>₹{{sgst}}</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Freight</td>
+
+                    <td>₹{{freight}}</td>
+
+                </tr>
+
+                <tr>
+
+                    <th>GRAND TOTAL</th>
+
+                    <th>₹{{grandTotal}}</th>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- Footer will come later -->
+        <!-- ================= FOOTER SECTION ================= -->
+
+        <div class="bottom-row">
+
+            <div class="bank-box">
+
+                <div class="box-heading">
+
+                    BANK DETAILS
+
+                </div>
+
+                <div class="box-content">
+
+                    <strong>Bank</strong> :
+                    {{bankName}}
+
+                    <br>
+
+                    <strong>A/c Name</strong> :
+                    {{companyName}}
+
+                    <br>
+
+                    <strong>A/c No.</strong> :
+                    {{accountNumber}}
+
+                    <br>
+
+                    <strong>IFSC</strong> :
+                    {{ifsc}}
+
+                    <br>
+
+                    <strong>Branch</strong> :
+                    {{branch}}
+
+                </div>
+
+            </div>
+
+            <div class="terms-box">
+
+                <div class="box-heading">
+
+                    TERMS & CONDITIONS
+
+                </div>
+
+                <div class="box-content">
+
+                    {{terms}}
+
+                </div>
+
+            </div>
+
+            <div class="signature-box">
+
+                <h3>
+
+                    For {{companyName}}
+
+                </h3>
+
+                <br><br>
+
+                <img src="/assets/signature.jpeg" height="70">
+
+                <br>
+
+                <strong>
+
+                    Authorized Signatory
+
+                </strong>
+
+            </div>
+
+        </div>
+
+        <img class="footer" src="/assets/footer.jpg">
+    </div>
+
+</body>
+
+</html>
