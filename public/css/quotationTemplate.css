@@ -42,9 +42,9 @@ body{
 
     transform:translate(-50%,-50%);
 
-    width:320px;
+    width:640px;
 
-    opacity:.06;
+    opacity:1.0;
 
     z-index:0;
 

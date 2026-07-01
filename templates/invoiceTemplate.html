@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>TAX INVOICE</title>
+
+    <link rel="stylesheet" href="/css/invoiceTemplate.css">
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- ================= WATERMARK ================= -->
+
+        <img src="/assets/watermark.jpg" class="watermark">
+
+        <!-- ================= HEADER ================= -->
+
+        <img src="/assets/header.jpg" class="header">
+
+        <!-- ================= TITLE ================= -->
+
+        <h1 class="title">
+
+            TAX INVOICE
+
+        </h1>
+
+        <!-- ================= DOCUMENT DETAILS ================= -->
+
+        <!-- ================= DOCUMENT DETAILS ================= -->
+
+        <table class="document-table">
+
+            <tr>
+
+                <td class="quotation-box">
+
+                    <table>
+
+                        <tr>
+
+                            <td><strong>Invoice No.</strong></td>
+
+                            <td>{{invoiceNo}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><strong>Invoice Date</strong></td>
+
+                            <td>{{invoiceDate}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><strong>Order No.</strong></td>
+
+                            <td>{{orderNumber}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><strong>Order Date</strong></td>
+
+                            <td>{{orderDate}}</td>
+
+                        </tr>
+
+                    </table>
+
+                </td>
+
+                <td class="empty-column">
+
+                </td>
+
+                <td class="details-box">
+
+                    <table>
+
+                        <tr>
+
+                            <td><strong>Model & Serial No.</strong></td>
+
+                            <td>{{modelSerialNumber}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><strong>Site</strong></td>
+
+                            <td>{{site}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><strong>GSTIN</strong></td>
+
+                            <td>{{companyGST}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><strong>Document</strong></td>
+
+                            <td>ORIGINAL</td>
+
+                        </tr>
+
+                    </table>
+
+                </td>
+
+            </tr>
+
+                </tr>
+
+                <tr>
+
+                    <!-- <td><strong>Order Date</strong></td> -->
+
+                    <!-- <td>{{paymentTerms}}</td> -->
+
+                </tr>
+
+                <tr>
+
+                    <!-- <td><strong>Model & Serial No</strong></td> -->
+
+                    <!-- <td>{{delivery}}</td> -->
+
+                </tr>
+
+                <tr>
+
+                    <!-- <td><strong>Site</strong></td> -->
+
+                    <!-- <td>{{currency}}</td> -->
+
+                </tr>
+
+            </table>
+
+        </td>
+
+        </tr>
+
+        </table>
+
+        <!-- ================= CUSTOMER ================= -->
+
+        <table class="customer-table">
+
+            <tr>
+
+                <td>
+
+                    <div class="box-heading">
+
+                        BILL TO (RECEIVER)
+
+                    </div>
+
+                    <div class="box-content">
+
+                        <strong>{{customerName}}</strong>
+
+                        <br><br>
+
+                        {{billTo}}
+
+                        <br><br>
+
+                        <strong>GSTIN :</strong>
+
+                        {{customerGST}}
+
+                        <br>
+
+                        <strong>State :</strong>
+
+                        {{state}}
+
+                        <br>
+
+                        <strong>Attention :</strong>
+
+                        {{attentionPerson}}
+
+                    </div>
+
+                </td>
+
+                <td>
+
+                    <div class="box-heading">
+
+                        SHIP TO (CONSIGNEE)
+
+                    </div>
+
+                    <div class="box-content">
+
+                        <strong>{{customerName}}</strong>
+
+                        <br><br>
+
+                        {{shipTo}}
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+        <!-- ================= ITEMS ================= -->
+
+        <table class="items-table">
+
+            <thead>
+
+                <tr>
+
+                    <!-- <th>SL.NO</th> -->
+
+                    <th>S:No</th>
+                    <th>DESCRIPTION</th>
+
+                    <th>HSN/SAC</th>
+
+                    <th>QTY</th>
+
+                    <th>UOM</th>
+
+                    <th>RATE (₹)</th>
+
+                    <th>BASIC VALUE</th>
+
+                    <th>GST</th>
+
+                    <th>TOTAL</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {{itemRows}}
+
+            </tbody>
+
+        </table>
+
+        <!-- ================= SUMMARY ================= -->
+
+        <table class="summary-table">
+
+            <tr>
+
+                <td class="amount-box">
+
+                    <div class="box-heading">
+
+                        Amount in Words
+
+                    </div>
+
+                    <div class="box-content">
+
+                        {{amountInWords}}
+
+                    </div>
+
+                </td>
+
+                <td class="totals-box">
+
+                    <table>
+
+                        <tr>
+
+                            <td>Basic Value</td>
+
+                            <td>₹{{subtotal}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Freight</td>
+
+                            <td>₹{{freight}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>CGST</td>
+
+                            <td>₹{{cgst}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>SGST</td>
+
+                            <td>₹{{sgst}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>IGST</td>
+
+                            <td>₹{{igst}}</td>
+
+                        </tr>
+
+                        <tr class="grand-total">
+
+                            <th>TOTAL</th>
+
+                            <th>₹{{grandTotal}}</th>
+
+                        </tr>
+
+                    </table>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+        <!-- ================= FOOTER INFO ================= -->
+
+        <table class="footer-table">
+
+            <tr>
+
+                <td class="bank">
+
+                    <div class="box-heading">
+
+                        BANK DETAILS
+
+                    </div>
+
+                    <div class="box-content">
+
+                        <strong>Bank :</strong> {{bankName}}<br>
+
+                        <strong>A/c Name :</strong> {{companyName}}<br>
+
+                        <strong>A/c No :</strong> {{accountNumber}}<br>
+
+                        <strong>IFSC :</strong> {{ifsc}}<br>
+
+                        <strong>Branch :</strong> {{branch}}
+
+                    </div>
+
+                </td>
+
+                <!-- <td class="terms">
+
+                    <div class="box-heading">
+
+                        DECLARATION:
+
+                    </div>
+
+                    <div class="box-content">
+
+                        {{terms}}
+
+                    </div>
+
+                </td> -->
+
+                <td class="signature">
+
+                    <h3>
+
+                        For {{companyName}}
+
+                    </h3>
+
+                    <img src="/assets/signaturenew.png" class="signature-image">
+
+                    <p>
+
+                        Authorized Signatory
+
+                    </p>
+
+                </td>
+
+            </tr>
+
+        </table>
+        <div class="jurisdiction">
+
+**All disputes are subjected to Bhadradri Kothagudem Jurisdiction**
+
+</div>
+
+        <!-- ================= FOOTER ================= -->
+
+        <img src="/assets/footer.jpg" class="footer">
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Create Tax Invoice</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Create Tax Invoice</h1>
+
+<form
+    id="invoiceForm"
+    action="/invoice"
+    method="POST">
+
+    <!-- ================= DOCUMENT ================= -->
+
+    <h2>Invoice Details</h2>
+
+    <label>Invoice Number</label><br>
+
+    <input
+        type="text"
+        name="invoiceNo"
+        required>
+
+    <br><br>
+
+    <label>Invoice Date</label><br>
+
+    <input
+        type="date"
+        name="invoiceDate"
+        required>
+
+    <br><br>
+
+    <label>Order Number</label><br>
+
+    <input
+        type="text"
+        name="orderNumber">
+
+    <br><br>
+
+    <label>Order Date</label><br>
+
+    <input
+        type="date"
+        name="orderDate">
+
+    <br><br>
+
+    <label>Model & Serial Number</label><br>
+
+    <input
+        type="text"
+        name="modelSerialNumber">
+
+    <br><br>
+
+    <label>Site</label><br>
+
+    <input
+        type="text"
+        name="site">
+
+    <br><br>
+
+    <!-- ================= CUSTOMER ================= -->
+
+    <h2>Customer Details</h2>
+
+    <label>Customer Name</label><br>
+
+    <input
+        type="text"
+        name="customerName"
+        required>
+
+    <br><br>
+
+    <label>GST Number</label><br>
+
+    <input
+        type="text"
+        name="gstNumber">
+
+    <br><br>
+
+    <label>State</label><br>
+
+    <input
+        type="text"
+        name="state">
+
+    <br><br>
+
+    <label>Attention Person</label><br>
+
+    <input
+        type="text"
+        name="attentionPerson">
+
+    <br><br>
+
+    <label>Bill To (Receiver)</label><br>
+
+    <textarea
+        name="billTo"
+        rows="5"></textarea>
+
+    <br><br>
+
+    <label>Ship To (Consignee)</label><br>
+
+    <textarea
+        name="shipTo"
+        rows="5"></textarea>
+
+    <br><br>
+
+    <!-- ================= ITEMS ================= -->
+
+    <h2>Items</h2>
+
+    <table id="itemsTable" border="1">
+
+        <thead>
+
+        <tr>
+
+            <th>Description</th>
+
+            <th>HSN</th>
+
+            <th>Qty</th>
+
+            <th>Rate</th>
+
+            <th>GST %</th>
+
+            <th>Amount</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <button
+        type="button"
+        id="addItem">
+
+        + Add Item
+
+    </button>
+
+    <br><br>
+
+    <h3>
+
+        Grand Total :
+        ₹<span id="grandTotal">0</span>
+
+    </h3>
+
+    <input
+        type="hidden"
+        id="itemsData"
+        name="itemsData">
+
+    <br>
+
+    <button type="submit">
+
+        Generate Tax Invoice
+
+    </button>
+
+</form>
+
+</div>
+
+<script src="/js/invoice.js"></script>
+
+</body>
+
+</html>

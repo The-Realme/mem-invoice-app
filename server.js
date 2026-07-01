@@ -7,6 +7,7 @@ const PORT = 3000;
 // ================= Routes =================
 
 const quotationRoutes = require("./routes/quotationRoutes");
+const invoiceRoutes = require("./routes/invoiceRoutes");
 const pdfRoutes = require("./routes/pdfRoutes");
 
 // ================= Middleware =================
@@ -21,7 +22,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // ================= Application Routes =================
 
 app.use("/quotation", quotationRoutes);
-
+app.use("/invoice", invoiceRoutes);
 app.use("/pdf", pdfRoutes);
 
 // ================= Home Page =================
@@ -38,6 +39,17 @@ app.get("/preview", (req, res) => {
     res.sendFile(
 
         path.join(__dirname, "templates", "quotationTemplate.html")
+
+    );
+
+});
+
+
+app.get("/previewInvoice", (req, res) => {
+
+    res.sendFile(
+
+        path.join(__dirname, "templates", "invoiceTemplate.html")
 
     );
 
