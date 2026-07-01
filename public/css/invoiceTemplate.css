@@ -1,0 +1,406 @@
+/* ================= PAGE ================= */
+
+@page{
+    size:A4;
+    margin:0;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#ececec;
+}
+
+.page{
+
+    position:relative;
+
+    width:210mm;
+    min-height:297mm;
+
+    margin:auto;
+
+    background:white;
+
+    overflow:hidden;
+}
+
+/* ================= WATERMARK ================= */
+
+.watermark{
+
+    position:absolute;
+
+    top:48%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:640px;
+
+    opacity:1.0;
+
+    z-index:0;
+
+}
+
+/* ================= HEADER ================= */
+
+.header{
+
+    width:100%;
+
+    display:block;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+/* ================= TITLE ================= */
+
+.title{
+
+    text-align:center;
+
+    color:#007c86;
+
+    font-size:20px;
+
+    letter-spacing:1px;
+
+    margin:-31px 0 8px;
+
+    text-decoration:underline;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+/* ================= DOCUMENT ================= */
+
+.document-table{
+
+    width:94%;
+
+    margin:auto;
+
+    border-collapse:collapse;
+
+    margin-bottom:8px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.document-table td{
+
+    vertical-align:top;
+
+}
+
+.quotation-box{
+
+    width:32%;
+
+}
+
+.empty-column{
+
+    width:36%;
+
+}
+
+.details-box{
+
+    width:32%;
+
+}
+
+.quotation-box table,
+.details-box table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.quotation-box td,
+.details-box td{
+
+    border:1px solid #555;
+
+    padding:5px 8px;
+
+    font-size:13px;
+
+}
+
+/* ================= CUSTOMER ================= */
+
+.customer-table{
+
+    width:94%;
+
+    margin:auto;
+
+    border-collapse:collapse;
+
+    margin-bottom:8px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.customer-table td{
+
+    width:50%;
+
+    border:1px solid #555;
+
+    vertical-align:top;
+
+}
+
+.box-heading{
+
+    background:#007c86;
+
+    color:white;
+
+    font-weight:bold;
+
+    padding:5px 8px;
+
+    font-size:14px;
+
+}
+
+.box-content{
+
+    padding:8px;
+
+    line-height:1.45;
+
+    font-size:13px;
+
+}
+
+/* ================= ITEMS ================= */
+
+.items-table{
+
+    width:94%;
+
+    margin:auto;
+
+    border-collapse:collapse;
+
+    margin-bottom:8px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.items-table th{
+
+    background:#007c86;
+
+    color:white;
+
+    border:1px solid #444;
+
+    padding:6px;
+
+    font-size:13px;
+
+}
+
+.items-table td{
+
+    border:1px solid #444;
+
+    padding:5px;
+
+    font-size:13px;
+
+    text-align:center;
+
+}
+
+.items-table td:nth-child(2){
+
+    text-align:left;
+
+}
+
+/* ================= SUMMARY ================= */
+
+.summary-table{
+
+    width:94%;
+
+    margin:auto;
+
+    border-collapse:collapse;
+
+    margin-bottom:8px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.amount-box{
+
+    width:66%;
+
+    border:1px solid #555;
+
+    vertical-align:top;
+
+}
+
+.totals-box{
+
+    width:34%;
+
+    vertical-align:top;
+
+}
+
+.totals-box table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.totals-box td,
+.totals-box th{
+
+    border:1px solid #555;
+
+    padding:5px 8px;
+
+    font-size:13px;
+
+}
+
+.grand-total{
+
+    background:#007c86;
+
+    color:white;
+
+}
+
+/* ================= FOOTER INFO ================= */
+
+.footer-table{
+
+    width:94%;
+
+    margin:auto;
+
+    border-collapse:collapse;
+
+    margin-bottom:0px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.footer-table td{
+
+    border:1px solid #555;
+
+    vertical-align:top;
+
+}
+
+.bank{
+
+    width:32%;
+
+}
+
+.terms{
+
+    width:36%;
+
+}
+
+.signature{
+
+    width:32%;
+
+    text-align:center;
+
+}
+
+.signature-image{
+
+    width:105px;
+
+    margin-top:20px;
+
+    margin-bottom:8px;
+
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    width:100%;
+
+    display:block;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.footer-table .box-content{
+
+    padding:5px 8px;
+
+    line-height:1.3;
+
+    font-size:12px;
+
+}
+
+.jurisdiction{
+
+    text-align:center;
+
+    font-size:11px;
+
+    margin-top:4px;
+
+    font-style:italic;
+
+}
