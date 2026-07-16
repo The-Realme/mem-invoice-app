@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 });
 
 // preview Template
-app.get("/preview", (req, res) => {
+app.get("/previewquotation", (req, res) => {
 
     res.sendFile(
 

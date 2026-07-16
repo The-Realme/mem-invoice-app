@@ -1,2 +1,40 @@
-node_modules
-generated
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Generated PDFs
+generated/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Temporary files
+*.tmp
+
+# Coverage
+coverage/
+
+# Build folders
+dist/
+build/
+
+# Electron
+release/
+
+# Database backups only
+backup/
+*.backup
+
+# Runtime files
+*.pid
