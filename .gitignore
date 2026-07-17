@@ -39,3 +39,5 @@ backup/
 
 # Runtime files
 *.pid
+
+testConnection.js
